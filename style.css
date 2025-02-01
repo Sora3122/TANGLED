@@ -1,0 +1,49 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f3e7;
+    text-align: center;
+    color: #5a4d2f;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3em;
+    color: #f7e6a0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    background-color: #f7c21e;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #f7a900;
+}
+
+.scene {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+#lanternScene {
+    display: block;
+}
+
+#lanternScene h1 {
+    font-size: 2.5em;
+}
+
+#message {
+    font-size: 1.5em;
+    color: #f7e6a0;
+}
+
+
