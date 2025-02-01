@@ -1,33 +1,37 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Will You Watch Tangled With Me?</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div id="storybook" class="scene">
         <h1>Once upon a time...</h1>
         <p>A special someone was invited to a magical evening...</p>
-        <button id="startBtn">Continue</button>
+        <button id="startBtn" aria-label="Continue to next scene">Continue</button>
     </div>
 
     <div id="towerScene" class="scene">
         <h1>Will you join me under the stars?</h1>
-        <button id="yesBtn">Yes</button>
-        <button id="noBtn">No</button>
+        <button id="yesBtn" aria-label="Accept invitation">Yes</button>
+        <button id="noBtn" aria-label="Decline invitation">No</button>
     </div>
 
     <div id="lanternScene" class="scene">
         <h1>See you under the lanterns!</h1>
-        <p id="message">I can't wait to watch *Tangled* with you!</p>
+        <p id="message">I can't wait to watch <em>Tangled</em> with you!</p>
     </div>
 
     <audio id="backgroundMusic" loop>
         <source src="tangled_instrumental.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
     </audio>
     <audio id="lanternSound" loop>
         <source src="lantern_flicker.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
     </audio>
 
     <script src="script.js"></script>
