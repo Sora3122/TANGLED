@@ -1,4 +1,4 @@
- // Scene Management
+// Scene Management
 const scenes = {
     storybook: document.getElementById('storybook'),
     towerScene: document.getElementById('towerScene'),
@@ -6,13 +6,33 @@ const scenes = {
 };
 const messageElement = document.getElementById('message');
 const lanternContainer = document.getElementById('lanternContainer');
+const lightOverlay = document.getElementById('lightOverlay');
 const numLanterns = 30; // Number of lanterns
 
+// Background Music
+const bgMusic = new Audio('tangled_instrumental.mp3'); // Make sure to add this file
+bgMusic.loop = true;
+
 // Function to switch scenes
-function showScene(sceneId, message = "") {
+function showScene(sceneId, message = "", withTransition = false) {
+    if (withTransition) {
+        lightOverlay.classList.add('show-light'); // Show golden transition
+        setTimeout(() => {
+            switchScene(sceneId, message);
+            lightOverlay.classList.remove('show-light'); // Fade out
+        }, 1500); // Transition duration
+    } else {
+        switchScene(sceneId, message);
+    }
+}
+
+function switchScene(sceneId, message) {
     Object.values(scenes).forEach(scene => scene.classList.add('hidden'));
     scenes[sceneId].classList.remove('hidden');
     if (message) messageElement.textContent = message;
+
+    // Play music once first scene loads
+    if (!bgMusic.paused) bgMusic.play();
 }
 
 // Function to create lanterns
@@ -45,11 +65,11 @@ document.getElementById('startBtn').addEventListener('click', () => {
 });
 
 document.getElementById('yesBtn').addEventListener('click', () => {
-    showScene('lanternScene', "I can't wait to watch Tangled with you, my love! 💖");
+    showScene('lanternScene', "I can't wait to watch Tangled with you, my love! 💖", true);
 });
 
 document.getElementById('noBtn').addEventListener('click', () => {
-    showScene('lanternScene', "The lanterns will wait for you... 🌠");
+    showScene('lanternScene', "The lanterns will wait for you... 🌠", true);
 });
 
 // Generate lanterns as soon as the page loads
@@ -57,9 +77,3 @@ window.addEventListener('load', () => {
     createLanterns(); // Generate lanterns immediately
     showScene('storybook'); // Show the storybook scene
 });
-window.onload = function() {
-    // Start playing background music as soon as the page loads
-    document.getElementById("bgMusic").play();
-};
-
-document.getElementById("bgMusic").volume = 0.1;  // Adjust the volume (0 = mute, 1 = full volume)
