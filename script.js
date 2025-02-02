@@ -9,6 +9,10 @@ const lanternContainer = document.getElementById('lanternContainer');
 const lightOverlay = document.getElementById('lightOverlay');
 const numLanterns = 30; // Number of lanterns
 
+// Background Music
+const bgMusic = new Audio('background.mp3'); // Make sure to add this file
+bgMusic.loop = true;
+
 // Function to switch scenes
 function showScene(sceneId, message = "", withTransition = false) {
     if (withTransition) {
@@ -27,11 +31,9 @@ function switchScene(sceneId, message) {
     scenes[sceneId].classList.remove('hidden');
     if (message) messageElement.textContent = message;
 
-  window.onload = function() {
-    // Start playing background music as soon as the page loads
-    document.getElementById("bgMusic").play();
-};
-
+    // Play music once first scene loads
+    if (!bgMusic.paused) bgMusic.play();
+}
 
 // Function to create lanterns
 function createLanterns() {
