@@ -31,6 +31,10 @@ function switchScene(sceneId, message) {
     scenes[sceneId].classList.remove('hidden');
     if (message) messageElement.textContent = message;
 
+    // Play music once first scene loads
+    if (!bgMusic.paused) bgMusic.play();
+}
+
 // Function to create lanterns
 function createLanterns() {
     lanternContainer.innerHTML = ''; // Clear existing lanterns
