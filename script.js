@@ -62,4 +62,4 @@ window.onload = function() {
     document.getElementById("bgMusic").play();
 };
 
-document.getElementById("bgMusic").volume = 0.3;  // Adjust the volume (0 = mute, 1 = full volume)
+document.getElementById("bgMusic").volume = 0.1;  // Adjust the volume (0 = mute, 1 = full volume)
