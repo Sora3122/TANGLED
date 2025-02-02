@@ -10,36 +10,24 @@
     <!-- Storybook Opening Scene -->
     <div id="storybook" class="scene">
         <h1>Once upon a time...</h1>
-        <p>A special someone was invited to a magical evening...</p>
+        <p>A special someone was invited for a something special...</p>
         <button id="startBtn">Continue</button>
     </div>
 
     <!-- Rapunzel’s Tower Scene -->
     <div id="towerScene" class="scene hidden">
-        <h1>Will you watch Tangled with me?</h1>
+        <h1>Will you be my Rapunzel?</h1>
+        <p> While I to be your Flynn</p>
         <button id="yesBtn">Yes</button>
         <button id="noBtn">No</button>
     </div>
 
     <!-- Lantern Scene (Final Stage) -->
     <div id="lanternScene" class="scene hidden">
-        <h1>See you under the lanterns!</h1>
-        <p id="message">I can't wait to watch *Tangled* with you!</p>
+        <h1>See you under the lanterns tonight!</h1>
+        <p id="message"></p>
+        <div id="lanternContainer"></div>
     </div>
-    
-    <div id="lanternContainer">
-    <div class="lantern"></div>
-    <div class="lantern"></div>
-    <div class="lantern"></div>
-</div>
-
-    <audio id="Music" autoplay loop>
-    <source src="tangled_instrumental.mp3" type="audio/mp3">
-</audio>
-
-<audio id="bgMusic">
-    <source src="lantern_flicker.mp3" type="audio/mp3">
-</audio>
 
     <script src="script.js"></script>
 </body>
