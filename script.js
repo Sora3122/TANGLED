@@ -10,7 +10,7 @@ const lightOverlay = document.getElementById('lightOverlay');
 const numLanterns = 30; // Number of lanterns
 
 // Background Music
-const bgMusic = new Audio('background.mp3'); // Make sure to add this file
+const bgMusic = new Audio('tangled_instrumental.mp3'); // Make sure to add this file
 bgMusic.loop = true;
 
 // Function to switch scenes
