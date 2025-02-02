@@ -3,6 +3,33 @@ body {
     text-align: center;
     background-color: #f8e6e0;
 }
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #f8e6e0;
+}
+
+.scene {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 20px;
+    background-color: #ffcc00;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
 
 /* Active scenes fade in */
 .scene:not(.hidden) {
