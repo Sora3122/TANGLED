@@ -1,36 +1,25 @@
-window.onload = function() {
-    const storybook = document.getElementById('storybook');
-    const towerScene = document.getElementById('towerScene');
-    const lanternScene = document.getElementById('lanternScene');
-    const startBtn = document.getElementById('startBtn');
-    const yesBtn = document.getElementById('yesBtn');
-    const noBtn = document.getElementById('noBtn');
-    const backgroundMusic = document.getElementById('backgroundMusic');
-    const lanternSound = document.getElementById('lanternSound');
-
-    startBtn.addEventListener('click', function() {
-        storybook.style.display = 'none';
-        towerScene.style.display = 'block';
-        setTimeout(() => {
-            towerScene.style.opacity = 1;
-        }, 100);
-        backgroundMusic.play();
+// Function to switch scenes
+function showScene(sceneId) {
+    // Hide all scenes
+    document.querySelectorAll(".scene").forEach(scene => {
+        scene.classList.add("hidden");
     });
+    // Show the selected scene
+    document.getElementById(sceneId).classList.remove("hidden");
+}
 
-    yesBtn.addEventListener('click', function() {
-        towerScene.style.display = 'none';
-        lanternScene.style.display = 'block';
-        setTimeout(() => {
-            lanternScene.style.opacity = 1;
-        }, 100);
-        lanternSound.play();
-        // Zoom out and show the lanterns
-        document.body.style.transition = "background-color 2s ease";
-        document.body.style.backgroundColor = "#1f2b6c";
-    });
+// Start button to go from Storybook to Tower Scene
+document.getElementById("startBtn").addEventListener("click", function() {
+    showScene("towerScene");
+});
 
-    noBtn.addEventListener('click', function() {
-        towerScene.style.display = 'none';
-        alert("Maybe another time...");
-    });
-};
+// Yes button to go to Lantern Scene
+document.getElementById("yesBtn").addEventListener("click", function() {
+    showScene("lanternScene");
+});
+
+// No button (optional: can also show the lanterns but with a sad message)
+document.getElementById("noBtn").addEventListener("click", function() {
+    showScene("lanternScene");
+    document.getElementById("message").textContent = "Maybe next time...";
+});
