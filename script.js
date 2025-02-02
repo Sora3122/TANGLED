@@ -30,3 +30,7 @@ document.getElementById("yesBtn").addEventListener("click", function() {
     // Start background music
     document.getElementById("bgMusic").play();
 });
+
+document.getElementById("bgMusic").volume = 0.4;  // Adjust the volume (0 = mute, 1 = full volume)
+
+});
