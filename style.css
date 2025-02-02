@@ -99,10 +99,10 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, #ff9900 100%, #ffcc00 50%, rgba(255, 140, 0, 0) 20%);
-    opacity: 00.0;
+    background: radial-gradient(circle, rgba(255, 204, 102, 1) 100%, rgba(255, 165, 0, 0.8) 90%, rgba(255, 140, 0, 0) 10%);
+    opacity: 0;
     pointer-events: none;
-    transition: opacity 4.5s ease-in-out;
+    transition: opacity 2s ease-in-out;
 }
 
 .show-light {
