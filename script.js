@@ -23,3 +23,10 @@ document.getElementById("noBtn").addEventListener("click", function() {
     showScene("lanternScene");
     document.getElementById("message").textContent = "Maybe next time...";
 });
+
+document.getElementById("yesBtn").addEventListener("click", function() {
+    showScene("lanternScene");
+    
+    // Start background music
+    document.getElementById("bgMusic").play();
+});
