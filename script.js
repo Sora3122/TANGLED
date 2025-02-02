@@ -57,3 +57,9 @@ window.addEventListener('load', () => {
     createLanterns(); // Generate lanterns immediately
     showScene('storybook'); // Show the storybook scene
 });
+window.onload = function() {
+    // Start playing background music as soon as the page loads
+    document.getElementById("bgMusic").play();
+};
+
+document.getElementById("bgMusic").volume = 0.3;  // Adjust the volume (0 = mute, 1 = full volume)
